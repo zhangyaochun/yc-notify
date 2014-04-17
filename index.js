@@ -27,7 +27,7 @@ exports.notify = function(opts) {
 
 		var args = [];
 		Object.keys(opts).forEach(function(key){
-			args.push('-' + key + opts[key]);
+			args = args.concat(['-' + key,opts[key]]);
 		});
 
 		spawn(cmd, args);
